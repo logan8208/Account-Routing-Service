@@ -100,10 +100,10 @@ Python 3.13 + pandas + openpyxl (`requirements.txt`). Every script reads the pri
 
 ### Project status
 - Steps 0–8 done and approved; public repo `Account-Routing-Service` published 2026-10-14.
-- Final round (owner request): README split into shorter paragraphs + LOG link + cost summary +
-  final-check section; LOG.md rewritten short; `verify_rules.py` + `docs/final_check.md` added.
-  54 automated checks pass; privacy scan 0 findings. Waiting on owner: push approval for these
-  edits, final `/cost`, and when to run `gh auth logout` (D43).
+- Final round (Logan's request): README split into shorter paragraphs + LOG link + cost summary +
+  final-check section; LOG.md rewritten short; owner referred to as "Logan" in README/LOG/docs;
+  `verify_rules.py` + `docs/final_check.md` added. 54 automated checks pass; privacy scan 0
+  findings. **Pushed 2026-10-14.** Only open item: when to run `gh auth logout` (D43).
 - To publish changes: `python run.py` → `python pipeline/check_publish_safety.py` (0 findings)
   → commit → `git push`.
 
