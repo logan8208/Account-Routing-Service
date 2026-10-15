@@ -326,6 +326,14 @@ the code comments.
   command); nothing was written; redone from a script file.
 - 2026-10-14 — README: added the pre-publish scan instruction. Re-scan: 0 findings. Not pushed yet —
   reported the scan findings to the owner and asked for the explicit "push it" before publishing.
+- 2026-10-14 — **Step 8 published:** final privacy scan 0 findings → initial commit `71e010b` (40
+  files, author "Account Routing Service" with GitHub noreply address) → `gh repo create
+  Account-Routing-Service --public` + push to `main`. Verified: visibility PUBLIC, description
+  "Account Routing Service", remote commit == local commit, 40 files on GitHub, no
+  `private_originals/`, `.claude/` or cache files published, repo page returns HTTP 200.
+  URL: https://github.com/<owner>/Account-Routing-Service (owner = the owner's GitHub account).
+- 2026-10-14 — This log entry pushed as a follow-up commit so the published LOG.md is current.
+  `gh auth logout` NOT run — waiting for the owner's approval (D43).
 
 ## 6. File changes
 
@@ -362,6 +370,8 @@ the code comments.
   `pipeline/step1_clean.py` + `pipeline/step3_route.py` (neutral metadata), `.gitignore`
   (+`.claude/`, +`private_originals/`). Added `private_originals/` (local only),
   `pipeline/check_publish_safety.py`.
+- 2026-10-14 — Git: initial commit `71e010b` on `main`, pushed to the public GitHub repo; follow-up
+  commit for this log update.
 
 ## 7. Corrections caught by the owner
 

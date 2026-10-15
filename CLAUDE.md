@@ -105,7 +105,9 @@ Python 3.13 + pandas + openpyxl (`requirements.txt`). Every script reads the pri
 - Step 5 README: approved 2026-10-14. Cost $0.97 (running total $11.29).
 - Step 6 CSV: done 2026-10-14 (`output/accounts_final.csv`, `output/reps_final.csv`); cost $1.45 (running
   total $12.74). Push approved (D41); privacy scan clean (D42).
-- Step 8 GitHub: in progress.
+- Step 8 GitHub: published 2026-10-14 as public repo `Account-Routing-Service` (branch `main`).
+  To publish changes: `python run.py` → `python pipeline/check_publish_safety.py` (0 findings)
+  → commit → `git push`. `gh auth logout` pending owner approval (D43).
 
 ### Step 2 logic
 Precedence per company (notes of all merged records count): (1) a note naming a use case → that
