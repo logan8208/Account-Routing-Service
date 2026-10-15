@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UseCaseClassification",
+  "description": "One record per eligible account (entity primary record). Approved 2026-10-14 with owner changes: Option B (no signal -> none, D26); dispatch notes -> media_captions (D29, revised). Labels are exactly the brief's 8.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "account_id",
+    "use_case",
+    "evidence_source",
+    "evidence",
+    "confidence",
+    "rationale",
+    "needs_review"
+  ],
+  "properties": {
+    "account_id": {
+      "type": "string",
+      "pattern": "^ACC-\\d{6}$"
+    },
+    "use_case": {
+      "enum": [
+        "call_analytics",
+        "voice_agent",
+        "meeting_notes",
+        "media_captions",
+        "clinical_documentation",
+        "legal_transcription",
+        "other",
+        "none"
+      ]
+    },
+    "evidence_source": {
+      "enum": [
+        "notes",
+        "notes+industry",
+        "industry",
+        "no_signal"
+      ],
+      "description": "What the label rests on. 'industry' alone is never used (Option B, D26); kept in the enum only for compatibility."
+    },
+    "evidence": {
+      "type": "string",
+      "description": "Verbatim text the label rests on: an exact note from this account and/or its exact industry value. Empty only when evidence_source = no_signal. Checked by script: must be a substring of this account's own data."
+    },
+    "confidence": {
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    "rationale": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "One plain-English sentence a rep can read."
+    },
+    "needs_review": {
+      "type": "boolean",
+      "description": "True for ambiguous mappings or low confidence."
+    }
+  }
+}

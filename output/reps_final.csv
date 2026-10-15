@@ -1,0 +1,7 @@
+﻿rep_id,rep_name,region,segment,current_book_size,new_book_size
+REP-01,Priya Natarajan,EAST,Mid-Market,140,260
+REP-02,Marcus Bell,EAST,Enterprise,60,260
+REP-03,Dana Whitfield,CENTRAL,Mid-Market,95,260
+REP-04,Luis Ortega,CENTRAL,Enterprise,45,260
+REP-05,Kenji Mori,WEST,Mid-Market,210,260
+REP-06,Sam Okafor,WEST,Enterprise,30,225

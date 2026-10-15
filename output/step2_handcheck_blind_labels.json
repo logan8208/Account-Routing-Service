@@ -1,0 +1,752 @@
+[
+ {
+  "account_id": "ACC-100485",
+  "use_case": "none",
+  "why": "Blank notes; no evidence of speech need."
+ },
+ {
+  "account_id": "ACC-101138",
+  "use_case": "none",
+  "why": "Blank notes; no evidence of speech need."
+ },
+ {
+  "account_id": "ACC-100658",
+  "use_case": "none",
+  "why": "Blank notes; no evidence of speech need."
+ },
+ {
+  "account_id": "ACC-101457",
+  "use_case": "voice_agent",
+  "why": "Building an AI voice agent for appointment scheduling."
+ },
+ {
+  "account_id": "ACC-101009",
+  "use_case": "voice_agent",
+  "why": "Building an AI voice agent for appointment scheduling."
+ },
+ {
+  "account_id": "ACC-100709",
+  "use_case": "voice_agent",
+  "why": "Building an AI voice agent for appointment scheduling."
+ },
+ {
+  "account_id": "ACC-101411",
+  "use_case": "other",
+  "why": "Speech interest, no use case named; industry Marketing Tech implies none."
+ },
+ {
+  "account_id": "ACC-101091",
+  "use_case": "media_captions",
+  "why": "Speech interest, no use case named; industry Media & Entertainment implies it."
+ },
+ {
+  "account_id": "ACC-101831",
+  "use_case": "call_analytics",
+  "why": "Speech interest, no use case named; industry Sales Tech implies it."
+ },
+ {
+  "account_id": "ACC-101245",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-101991",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-100718",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-100240",
+  "use_case": "call_analytics",
+  "why": "Contact center wants real-time agent assist."
+ },
+ {
+  "account_id": "ACC-101123",
+  "use_case": "call_analytics",
+  "why": "Contact center wants real-time agent assist."
+ },
+ {
+  "account_id": "ACC-101069",
+  "use_case": "call_analytics",
+  "why": "Contact center wants real-time agent assist."
+ },
+ {
+  "account_id": "ACC-100356",
+  "use_case": "call_analytics",
+  "why": "Contact center wants real-time agent assist."
+ },
+ {
+  "account_id": "ACC-100916",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-101619",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-101973",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-101482",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-100945",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-101210",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-100823",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-101653",
+  "use_case": "audio_analytics",
+  "why": "Dispatch/driver radio and phone comms transcription."
+ },
+ {
+  "account_id": "ACC-100998",
+  "use_case": "audio_analytics",
+  "why": "Dispatch/driver radio and phone comms transcription."
+ },
+ {
+  "account_id": "ACC-101967",
+  "use_case": "audio_analytics",
+  "why": "Dispatch/driver radio and phone comms transcription."
+ },
+ {
+  "account_id": "ACC-100857",
+  "use_case": "audio_analytics",
+  "why": "Dispatch/driver radio and phone comms transcription."
+ },
+ {
+  "account_id": "ACC-100811",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-100930",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-100544",
+  "use_case": "media_captions",
+  "why": "Lecture capture product needing multilingual transcription."
+ },
+ {
+  "account_id": "ACC-101114",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-101459",
+  "use_case": "meeting_notes",
+  "why": "Product has meeting recorder; transcription core workflow."
+ },
+ {
+  "account_id": "ACC-101491",
+  "use_case": "media_captions",
+  "why": "Podcast network wants show notes and transcripts."
+ },
+ {
+  "account_id": "ACC-101809",
+  "use_case": "call_analytics",
+  "why": "Sales coaching product built on call recordings."
+ },
+ {
+  "account_id": "ACC-101897",
+  "use_case": "call_analytics",
+  "why": "Voice-of-customer analytics including calls."
+ },
+ {
+  "account_id": "ACC-100140",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-101950",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-101588",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-101938",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-100961",
+  "use_case": "other",
+  "why": "Speech interest, no use case named; industry Manufacturing implies none."
+ },
+ {
+  "account_id": "ACC-100100",
+  "use_case": "call_analytics",
+  "why": "Speech interest, no use case named; industry Sales Tech implies it."
+ },
+ {
+  "account_id": "ACC-101015",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-101484",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-100011",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-100047",
+  "use_case": "voice_agent",
+  "why": "IVR modernization project scoped."
+ },
+ {
+  "account_id": "ACC-100794",
+  "use_case": "voice_agent",
+  "why": "IVR modernization project scoped."
+ },
+ {
+  "account_id": "ACC-101377",
+  "use_case": "voice_agent",
+  "why": "IVR modernization project scoped."
+ },
+ {
+  "account_id": "ACC-101129",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-101165",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-100284",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-101085",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-101730",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-101557",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-101206",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-101410",
+  "use_case": "call_analytics",
+  "why": "Phone claims intake; wants call summaries."
+ },
+ {
+  "account_id": "ACC-100456",
+  "use_case": "call_analytics",
+  "why": "Phone claims intake; wants call summaries."
+ },
+ {
+  "account_id": "ACC-101291",
+  "use_case": "call_analytics",
+  "why": "Phone claims intake; wants call summaries."
+ },
+ {
+  "account_id": "ACC-100499",
+  "use_case": "legal_transcription",
+  "why": "Speech interest, no use case named; industry Legal Tech implies it."
+ },
+ {
+  "account_id": "ACC-100112",
+  "use_case": "other",
+  "why": "Speech interest, no use case named; industry Marketing Tech implies none."
+ },
+ {
+  "account_id": "ACC-100894",
+  "use_case": "media_captions",
+  "why": "Speech interest, no use case named; industry Media & Entertainment implies it."
+ },
+ {
+  "account_id": "ACC-100322",
+  "use_case": "media_captions",
+  "why": "Lecture capture product needing multilingual transcription."
+ },
+ {
+  "account_id": "ACC-100491",
+  "use_case": "media_captions",
+  "why": "Lecture capture product needing multilingual transcription."
+ },
+ {
+  "account_id": "ACC-100377",
+  "use_case": "media_captions",
+  "why": "Lecture capture product needing multilingual transcription."
+ },
+ {
+  "account_id": "ACC-101603",
+  "use_case": "legal_transcription",
+  "why": "Legal deposition and hearing recordings."
+ },
+ {
+  "account_id": "ACC-100050",
+  "use_case": "legal_transcription",
+  "why": "Legal deposition and hearing recordings."
+ },
+ {
+  "account_id": "ACC-100550",
+  "use_case": "legal_transcription",
+  "why": "Legal deposition and hearing recordings."
+ },
+ {
+  "account_id": "ACC-100407",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-102007",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-101515",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-100671",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-100650",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-100107",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-101947",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-100417",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-100758",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-101578",
+  "use_case": "meeting_notes",
+  "why": "Product has meeting recorder; transcription core workflow."
+ },
+ {
+  "account_id": "ACC-101495",
+  "use_case": "meeting_notes",
+  "why": "Product has meeting recorder; transcription core workflow."
+ },
+ {
+  "account_id": "ACC-101660",
+  "use_case": "meeting_notes",
+  "why": "Product has meeting recorder; transcription core workflow."
+ },
+ {
+  "account_id": "ACC-100289",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-101953",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-101779",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-100367",
+  "use_case": "call_analytics",
+  "why": "Recorded support calls; wants transcription and QA scoring."
+ },
+ {
+  "account_id": "ACC-100383",
+  "use_case": "call_analytics",
+  "why": "Recorded support calls; wants transcription and QA scoring."
+ },
+ {
+  "account_id": "ACC-101109",
+  "use_case": "call_analytics",
+  "why": "Recorded support calls; wants transcription and QA scoring."
+ },
+ {
+  "account_id": "ACC-101884",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-101635",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-100926",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-100484",
+  "use_case": "media_captions",
+  "why": "Podcast network wants show notes and transcripts."
+ },
+ {
+  "account_id": "ACC-100968",
+  "use_case": "media_captions",
+  "why": "Podcast network wants show notes and transcripts."
+ },
+ {
+  "account_id": "ACC-100368",
+  "use_case": "media_captions",
+  "why": "Podcast network wants show notes and transcripts."
+ },
+ {
+  "account_id": "ACC-100152",
+  "use_case": "call_analytics",
+  "why": "Sales coaching product built on call recordings."
+ },
+ {
+  "account_id": "ACC-100149",
+  "use_case": "call_analytics",
+  "why": "Sales coaching product built on call recordings."
+ },
+ {
+  "account_id": "ACC-101355",
+  "use_case": "call_analytics",
+  "why": "Sales coaching product built on call recordings."
+ },
+ {
+  "account_id": "ACC-101881",
+  "use_case": "media_captions",
+  "why": "Streaming captions for live events."
+ },
+ {
+  "account_id": "ACC-100002",
+  "use_case": "media_captions",
+  "why": "Streaming captions for live events."
+ },
+ {
+  "account_id": "ACC-100935",
+  "use_case": "media_captions",
+  "why": "Streaming captions for live events."
+ },
+ {
+  "account_id": "ACC-101347",
+  "use_case": "clinical_documentation",
+  "why": "Telehealth clinicians want ambient notes from patient visits."
+ },
+ {
+  "account_id": "ACC-101844",
+  "use_case": "clinical_documentation",
+  "why": "Telehealth clinicians want ambient notes from patient visits."
+ },
+ {
+  "account_id": "ACC-101777",
+  "use_case": "clinical_documentation",
+  "why": "Telehealth clinicians want ambient notes from patient visits."
+ },
+ {
+  "account_id": "ACC-101143",
+  "use_case": "media_captions",
+  "why": "Video platform adding captions and dubbing."
+ },
+ {
+  "account_id": "ACC-101185",
+  "use_case": "media_captions",
+  "why": "Video platform adding captions and dubbing."
+ },
+ {
+  "account_id": "ACC-100243",
+  "use_case": "media_captions",
+  "why": "Video platform adding captions and dubbing."
+ },
+ {
+  "account_id": "ACC-101631",
+  "use_case": "call_analytics",
+  "why": "Voice-of-customer analytics including calls."
+ },
+ {
+  "account_id": "ACC-101939",
+  "use_case": "call_analytics",
+  "why": "Voice-of-customer analytics including calls."
+ },
+ {
+  "account_id": "ACC-101349",
+  "use_case": "call_analytics",
+  "why": "Voice-of-customer analytics including calls."
+ },
+ {
+  "account_id": "ACC-100059",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-101842",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-100255",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-100102",
+  "use_case": "media_captions",
+  "why": "Video platform adding captions and dubbing."
+ },
+ {
+  "account_id": "ACC-101954",
+  "use_case": "meeting_notes",
+  "why": "Product has meeting recorder; transcription core workflow."
+ },
+ {
+  "account_id": "ACC-101412",
+  "use_case": "call_analytics",
+  "why": "Contact center wants real-time agent assist."
+ },
+ {
+  "account_id": "ACC-101456",
+  "use_case": "clinical_documentation",
+  "why": "Telehealth clinicians want ambient notes from patient visits."
+ },
+ {
+  "account_id": "ACC-100420",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-101192",
+  "use_case": "meeting_notes",
+  "why": "Product has meeting recorder; transcription core workflow."
+ },
+ {
+  "account_id": "ACC-100194",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-100441",
+  "use_case": "call_analytics",
+  "why": "Contact center wants real-time agent assist."
+ },
+ {
+  "account_id": "ACC-101039",
+  "use_case": "none",
+  "why": "Blank notes; no evidence of speech need."
+ },
+ {
+  "account_id": "ACC-100160",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-100745",
+  "use_case": "none",
+  "why": "Blank notes; no evidence of speech need."
+ },
+ {
+  "account_id": "ACC-100669",
+  "use_case": "call_analytics",
+  "why": "Sales coaching product built on call recordings."
+ },
+ {
+  "account_id": "ACC-100126",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-101913",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-100774",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-101034",
+  "use_case": "media_captions",
+  "why": "Streaming captions for live events."
+ },
+ {
+  "account_id": "ACC-100629",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-101858",
+  "use_case": "call_analytics",
+  "why": "Recorded support calls; wants transcription and QA scoring."
+ },
+ {
+  "account_id": "ACC-101198",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-100428",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-101783",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-100944",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-100430",
+  "use_case": "media_captions",
+  "why": "Podcast network wants show notes and transcripts."
+ },
+ {
+  "account_id": "ACC-101931",
+  "use_case": "call_analytics",
+  "why": "Phone claims intake; wants call summaries."
+ },
+ {
+  "account_id": "ACC-100534",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-101835",
+  "use_case": "voice_agent",
+  "why": "Building an AI voice agent for appointment scheduling."
+ },
+ {
+  "account_id": "ACC-101753",
+  "use_case": "media_captions",
+  "why": "Streaming captions for live events."
+ },
+ {
+  "account_id": "ACC-101297",
+  "use_case": "none",
+  "why": "Blank notes; no evidence of speech need."
+ },
+ {
+  "account_id": "ACC-101478",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-100980",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-100064",
+  "use_case": "none",
+  "why": "Blank notes; no evidence of speech need."
+ },
+ {
+  "account_id": "ACC-101636",
+  "use_case": "call_analytics",
+  "why": "Phone claims intake; wants call summaries."
+ },
+ {
+  "account_id": "ACC-100256",
+  "use_case": "audio_analytics",
+  "why": "Dispatch/driver radio and phone comms transcription."
+ },
+ {
+  "account_id": "ACC-101318",
+  "use_case": "call_analytics",
+  "why": "Voice-of-customer analytics including calls."
+ },
+ {
+  "account_id": "ACC-100248",
+  "use_case": "media_captions",
+  "why": "Lecture capture product needing multilingual transcription."
+ },
+ {
+  "account_id": "ACC-101604",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-100802",
+  "use_case": "legal_transcription",
+  "why": "Legal deposition and hearing recordings."
+ },
+ {
+  "account_id": "ACC-100939",
+  "use_case": "call_analytics",
+  "why": "Phone claims intake; wants call summaries."
+ },
+ {
+  "account_id": "ACC-101442",
+  "use_case": "none",
+  "why": "Blank notes; no evidence of speech need."
+ },
+ {
+  "account_id": "ACC-101623",
+  "use_case": "none",
+  "why": "No speech/transcription need in notes."
+ },
+ {
+  "account_id": "ACC-101269",
+  "use_case": "other",
+  "why": "Speech interest, no use case named; industry Gaming implies none."
+ },
+ {
+  "account_id": "ACC-100264",
+  "use_case": "call_analytics",
+  "why": "Phone claims intake; wants call summaries."
+ }
+]
