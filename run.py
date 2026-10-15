@@ -22,6 +22,7 @@ STEPS = [
     ("        verify step 3", "pipeline/verify_step3.py"),
     ("Step 4  build the web UI", "pipeline/step4_build_ui.py"),
     ("Step 5  export final CSVs", "pipeline/step5_export_csv.py"),
+    ("Final   check output against rules.md and the brief", "pipeline/verify_rules.py"),
 ]
 
 

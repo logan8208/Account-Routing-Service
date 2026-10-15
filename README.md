@@ -1,38 +1,44 @@
-# Account Sorting & Routing
+# Account Routing Service
 
-Takes the raw CRM export of ~2,000 accounts, cleans it, removes duplicates and ineligible accounts
-(with a reason for every one), classifies each company's speech use case, scores fit, assigns
-accounts to six account executives under the routing rules in [`rules.md`](rules.md), and shows each
-rep's book, with a readable reason per account, in a small local web UI.
+Cleans the raw CRM export of ~2,000 accounts and assigns the good ones to six account executives,
+following the routing rules in [`rules.md`](rules.md). Every account gets a plain-English reason,
+and each rep's book can be browsed in a small web page that runs on your own computer.
 
 All companies, people and data in this project are fictional.
+
+> **📒 Project log:** open [`LOG.md`](LOG.md) (click it in the file list above). It is a short
+> record of who did what, every decision, every mistake and how it was caught, and what the project
+> cost. Build details for engineers are in [`CLAUDE.md`](CLAUDE.md).
 
 ---
 
 ## For the sales manager
 
-**What this is.** Every one of the 2,020 CRM rows has been accounted for. After merging 55 duplicate
-rows, the 1,965 real companies split into 513 that are excluded (existing customers, under 20
-employees, competitors, companies that no longer exist, outside our territory, or business units of
-customers) and 1,452 eligible prospects. Each eligible company has a fit score out of 100 built from
-what `rules.md` says wins: a speech use case in the notes, our strongest industries, mid-to-large
-size, and recent funding. Reps got the highest-scoring companies in their region and segment until
-their book reached 260. 945 accounts are assigned; 507 good-but-lower-ranked accounts are waiting as
-"unassigned", and every account (assigned, unassigned or excluded) carries a plain-English reason
-built only from its own CRM data. **To open it:** go to the [`web_ui/rep_books.html`](web_ui/rep_books.html)
-file in this GitHub repo, click **Download raw file** (the download icon at the top right of the
-file view), then double-click the downloaded file — it opens in your browser, works offline, and
-needs no install or login. **What to double-check:** (1) Sam Okafor (West Enterprise) has 35 empty
-slots because only 195 eligible West Enterprise companies exist — we chose not to fill them from
-other regions or segments; (2) Kenji Mori (West Mid-Market) had room for only 50, so 178 eligible
-companies are unassigned, including 26 that score 60+ with a real speech use case — worth a look;
-(3) 85 use-case labels are flagged for review (dispatch radio/phone companies labelled
-`media_captions`, and companies that show speech interest without saying what for); (4) the
-**Needs review** tab lists data the rules handled but a person should confirm (states filled in from
-the city, LinkedIn/Twitter links instead of real websites, size conflicts with notes, churned
-customers that still show spend). The use-case labels follow the rules we agreed and matched an
-independent blind check on 150 accounts with no disagreements, but they have not yet been compared
-with the team's ground truth.
+Every one of the 2,020 CRM rows is accounted for: 945 accounts are assigned to reps, 507 good but
+lower-ranked accounts are waiting as "unassigned", and 568 rows are excluded or merged, each with
+its reason. Reps got the highest-scoring companies in their region and segment, scored on what
+`rules.md` says wins (a speech use case in the notes, our strongest industries, mid-to-large size,
+recent funding), until their book reached 260.
+
+**How to open it**
+
+1. Open [`web_ui/rep_books.html`](web_ui/rep_books.html) in this GitHub repo.
+2. Click **Download raw file** (the download icon at the top right of the file view).
+3. Double-click the downloaded file. It opens in your browser, works offline, and needs no install
+   or login.
+
+**What to double-check**
+
+- **Sam Okafor (West Enterprise) has 35 empty slots.** Only 195 eligible West Enterprise companies
+  exist, and we chose not to fill from other regions or segments.
+- **Kenji Mori (West Mid-Market) only had room for 50.** 178 eligible companies are unassigned,
+  including 26 that score 60+ with a real speech use case. Worth a look.
+- **85 use-case labels are flagged for review:** dispatch radio/phone companies labelled
+  `media_captions`, and companies that show speech interest without saying what for.
+- **The "Needs review" tab:** states filled in from the city, LinkedIn/Twitter links instead of real
+  websites, employee counts that conflict with the notes, churned customers that still show spend.
+- **Use-case labels haven't been compared with the team's ground truth yet.** They follow the agreed
+  rules, and an independent blind check of 150 accounts found no disagreements.
 
 ---
 
@@ -72,10 +78,10 @@ Close `accounts-XLSX.xlsx` and `reps-XLSX.xlsx` in Excel first (Windows locks op
 | `output/reps_final.csv` | The reps with `current_book_size` and `new_book_size`. |
 | `output/` (other) | Machine-readable outputs: `step1_accounts.json` (cleaned + eligibility), `step2_use_cases.json`, `step3_assignments.json`, `step3_capacity.json`, the hand-check sample, blind labels and report. |
 | `pipeline/` | The code, one script per step plus independent `verify_*` scripts. |
-| `docs/` | The approved step 2 (classification) and step 3 (scoring) proposals. |
+| `docs/` | The approved step 2 (classification) and step 3 (scoring) proposals, and the final instruction-by-instruction check (`final_check.md`). |
 | `backup_originals/` | Untouched copies of the input files. The pipeline only ever reads these. |
 | `rules.md`, `Initial Prompt to Claude.md` | The routing spec and the project brief. |
-| `LOG.md` | Full project log: every instruction, decision, action, correction and cost. |
+| `LOG.md` | The project log: delegation, prompts, decisions, mistakes and how they were caught, cost. |
 | `CLAUDE.md` | How the output is built, for engineers maintaining it. |
 | `accounts.csv`, `reps.csv` | The original CSV exports, unedited. |
 
@@ -88,6 +94,7 @@ Close `accounts-XLSX.xlsx` and `reps-XLSX.xlsx` in Excel first (Windows locks op
 | 3. Score, route to reps under capacity, write reasons | `pipeline/step3_route.py` | `pipeline/verify_step3.py` (17 checks) |
 | 4. Build the web UI | `pipeline/step4_build_ui.py` | rendered and screenshot-tested in a browser |
 | 5. Export the final CSVs | `pipeline/step5_export_csv.py` | row/column counts asserted; read straight from the workbooks |
+| Final check against `rules.md` and the brief | `pipeline/verify_rules.py` | 19 checks |
 
 Before publishing changes, run `python pipeline/check_publish_safety.py`: it scans everything git
 would publish (including inside the workbooks) for emails, personal folder paths, user names,
@@ -110,23 +117,71 @@ table is `NOTE_RULES` in `step2_classify.py`; the score weights are in `score()`
 | Kenji Mori | West Mid-Market | 210 | 50 | 228 | 50 | 260 | 178 | 0 |
 | Sam Okafor | West Enterprise | 30 | 230 | 195 | 195 | 225 | 0 | **35** |
 
-Exclusions (first reason per company): under 20 employees 253 · existing customer 164 · outside
+**Excluded** (first reason per company): under 20 employees 253 · existing customer 164 · outside
 territory 66 · no longer exists 22 · competitor 7 · business unit of a customer 1. Plus 55 duplicate
 rows merged into their company.
 
-**Use-case classification:** 1,452 companies labelled (none 839, call_analytics 196,
-media_captions 193, voice_agent 73, other 41, clinical_documentation 39, legal_transcription 38,
-meeting_notes 33). Hand check: a stratified sample of **150** covering every note template,
-labelled blind by an independent Claude sub-agent → **0 errors, 0.0% (95% CI 0.0–2.5%)**. This
-measures correct application of the agreed rules; the policy calls most likely to differ from
-ground truth are listed in `output/step2_handcheck_report.md`. Cost of step 2 (design, run, hand
-check): **$2.37** in Claude Code session tokens (see `LOG.md` § Cost).
+**Use cases:** none 839 · call_analytics 196 · media_captions 193 · voice_agent 73 · other 41 ·
+clinical_documentation 39 · legal_transcription 38 · meeting_notes 33.
+
+**Hand check of the use cases:** a stratified sample of **150** companies, covering every note
+template, was labelled blind by an independent Claude sub-agent. Result: **0 errors (0.0%, 95% CI
+0.0–2.5%)**.
+
+That measures whether the agreed rules were applied correctly. The rules most likely to differ from
+the ground truth are listed in `output/step2_handcheck_report.md`.
+
+**How relationships hidden in the notes were found:** the notes are templated ("Business unit of X",
+"Billing domain for X"), so fixed rules find them reliably and the same way every run. Claude also
+read all 85 distinct notes to confirm the rules miss nothing.
+
+**Why the score weights are what they are:** see
+[`docs/step3_scoring_proposal.md`](docs/step3_scoring_proposal.md). In short, notes describing the
+company's own speech project count most, then industry, then size, then recent funding.
+
+---
+
+## Final check
+
+Every instruction in the brief, `rules.md`, `CLAUDE.md` and Logan's decisions was checked
+against the finished output: [`docs/final_check.md`](docs/final_check.md).
+
+`python run.py` runs **54 automated checks**, and all pass:
+
+- 18 on cleaning
+- 17 on scoring and routing, including every reason checked against its account's own data
+- 19 testing the output directly against `rules.md`, e.g. "no customer in any book", "AZ → Central"
+
+Plus a schema and evidence check on all 1,452 use-case labels, and a privacy scan before publishing
+(0 findings).
+
+---
+
+## What it cost
+
+Measured with Claude Code's `/cost` (model Claude Opus 5.5) at each checkpoint. Details are in
+[`LOG.md`](LOG.md) § Cost.
+
+| Stage | Cost |
+|---|---|
+| Planning, setup, first cleaning build | not measured (session restarted before the first reading) |
+| Cleaning fixes and classification proposal | $2.82 |
+| Use-case classification and blind hand check | $2.37 |
+| Scoring proposal | $1.57 |
+| Scoring and routing | $1.44 |
+| Web UI | $2.12 |
+| README | $0.97 |
+| CSV export and encoding fix | $1.45 |
+| Privacy review and publishing | $2.13 |
+| **Total measured** | **≈ $14.87**, about 6% of a weekly Claude plan limit |
+
+The final round of edits (this README, the shorter log, the final check) comes on top of that.
 
 ---
 
 ## Clarifications made where the rules were unclear
 
-Decisions by the project owner when Claude asked. IDs match `LOG.md` and the code comments.
+Decisions by Logan when Claude asked. IDs match `LOG.md` and the code comments.
 
 **Eligibility**
 - Any spend greater than $0 in the last 12 months makes a company a customer, even if the notes say
@@ -141,9 +196,10 @@ Decisions by the project owner when Claude asked. IDs match `LOG.md` and the cod
   flagged for enrichment. Anything outside US/Canada is not covered. (D13)
 
 **Duplicates and hierarchies**
-- Records of the same company are merged; if any record has spend, the whole company is a customer.
-  "Billing domain for", "Self-serve signup. Same company as" and "Product brand of" notes are the
-  same company. (D8, D23)
+- Records of the same company are merged. If any record has spend, the whole company is a customer.
+  (D8)
+- "Billing domain for", "Self-serve signup. Same company as" and "Product brand of" notes mean the
+  same company. (D23)
 - Business units are not merged: they go to whichever rep owns the parent, take one slot in that
   book, and move with the parent. Business units of customers stay with account management. (D8,
   D21, D25)
@@ -151,10 +207,11 @@ Decisions by the project owner when Claude asked. IDs match `LOG.md` and the cod
   enriched. (D22)
 
 **Use case**
-- Labels are exactly the brief's 8. No speech signal in the notes → `none` (industry alone is not a
-  use case). Podcasts and lecture capture → `media_captions`. Dispatch radio/phone → `media_captions`
-  (flagged for review). Speech interest without a use case → the industry's use case if clear, else
-  `other`. (D26, D28, D29, D30)
+- Labels are exactly the brief's 8.
+- No speech signal in the notes → `none`; industry alone is not a use case. (D26)
+- Podcasts and lecture capture → `media_captions`. (D28)
+- Dispatch radio/phone → `media_captions`, flagged for review. (D29)
+- Speech interest without a use case → the industry's use case if clear, else `other`. (D30)
 
 **Scoring and routing**
 - Recent funding: full credit 2025–26, partial 2024. "Duplicate?" note: penalty only if no duplicate
@@ -175,15 +232,15 @@ Decisions by the project owner when Claude asked. IDs match `LOG.md` and the cod
 
 ## What I would add with another day
 
-*(From the project owner.)*
+*(From Logan.)*
 
 - Enrich the 8 accounts that have only social-media URLs, and the 20 states inferred from city.
 - Revisit Kenji's 50-slot limit, given 26 strong accounts left over.
 - Decide what to do with Sam's 35 open slots.
 - Compare the use-case labels against the ground truth and adjust the label table.
 - Automate it so that it re-runs on a schedule as new accounts arrive, so the books "stay sorted."
-- Let reps leave feedback on reasons in the UI, and set up summary notifications delivered to the
-  owner.
+- Let reps leave feedback on reasons in the UI, and set up summary notifications delivered to
+  Logan.
 - Further enrich account data with tools like Clay and AI web-scraping / intent-scoring tools, so we
   know accurately for **all** accounts whether they align with our product (Voice AI
   infrastructure / model / STT service); then adjust scores to align more closely with our ICP and
@@ -200,7 +257,10 @@ Decisions by the project owner when Claude asked. IDs match `LOG.md` and the cod
 
 ## How this was built
 
-Built with Claude Code (model Claude Opus 5.5) working with the project owner, step by step with an
-approval at each step. One Claude sub-agent was used as an independent blind labeller for the
-use-case hand check. `LOG.md` records every prompt, decision, correction (including Claude's own
-mistakes and how they were caught) and the token/dollar cost per step.
+Built with Claude Code (model Claude Opus 5.5) working with Logan, one step at a time,
+with Logan's approval at each step.
+
+One Claude sub-agent was used as an independent blind labeller for the use-case hand check.
+
+[`LOG.md`](LOG.md) records the prompts, the decisions, every mistake (including Claude's own and how
+each was caught) and the cost.

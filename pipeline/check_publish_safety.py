@@ -60,6 +60,10 @@ def main():
         for where, t in texts:
             for label, pat in PATTERNS.items():
                 for m in re.finditer(pat, t):
+                    # Logan approved using the first name "Logan" in the docs (2026-10-14). Only the exact,
+                    # capitalised first name in prose is allowed; paths and metadata are still caught.
+                    if label == "local OS user name" and m.group(0) == user.capitalize():
+                        continue
                     findings.append((where, label, t[max(0, m.start() - 25):m.end() + 25].replace("\n", " ")))
     for where, label, ctx in findings:
         print(f"FOUND {label:24s} {where}: ...{ctx}...")

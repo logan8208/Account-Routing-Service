@@ -56,7 +56,7 @@ a GitHub repo with a README and the project log.
 17. **Human in the loop:** raise tricky accounts, hierarchies, scoring and assignment calls with the
     owner instead of deciding silently.
 18. Sub-agents are allowed when they make work faster (parallel tasks).
-19. Owner decisions D1-D43 are in LOG.md section 3; code comments cite them as (D<n>).
+19. Owner decisions D1-D43 are in LOG.md § 4 (Decisions); code comments cite them as (D<n>).
 20. **Never overwrite owner edits** to the workbooks. The owner formats files by hand (e.g. the
     banner row in `accounts`); scripts must preserve it (see step 1 writer).
 21. Children of customer parents are owned by account management (D21). Business units move with
@@ -66,6 +66,8 @@ a GitHub repo with a README and the project log.
 25. **Before every push:** run `python pipeline/check_publish_safety.py` (must report 0 findings).
     Never publish personal names, emails, usernames, tokens or local folder paths (D42).
 26. **Do not run `gh auth logout` until the owner approves** (D43).
+28. **Keep LOG.md short** (owner, final round): one line per item, grouped by category; no
+    verbatim `/cost` dumps — just the per-stage cost table.
 27. `private_originals/` (git-ignored) holds the true original exports; `backup_originals/` holds
     metadata-scrubbed copies with identical cell data — the pipeline reads the latter.
 24. For simple sub-agent tasks, propose a cheaper model (e.g. Sonnet/Haiku) rather than defaulting to Opus.
@@ -91,23 +93,19 @@ Python 3.13 + pandas + openpyxl (`requirements.txt`). Every script reads the pri
 | `pipeline/step4_build_ui.py` | Step 4. Builds `web_ui/rep_books.html`: one self-contained offline page (data embedded, no external assets). |
 | `pipeline/step5_export_csv.py` | Exports the final workbooks to `output/accounts_final.csv` and `output/reps_final.csv` (originals untouched). |
 | `pipeline/check_publish_safety.py` | Pre-publish privacy scan; run before every push (0 findings required). |
-| `run.py` | Runs steps 1–5 and every check in order; stops on the first failure; opens the UI (`--no-open` to skip). |
+| `pipeline/verify_rules.py` | Final check of the finished output against rules.md and the brief (19 checks). |
+| `docs/final_check.md` | Instruction-by-instruction compliance table. |
+| `run.py` | Runs steps 1–5 + the final rules check and every check in order; stops on the first failure; opens the UI (`--no-open` to skip). |
 | `web_ui/rep_books.html` | The web UI. Committed to the repo so anyone can download it and double-click (D37). |
 
 ### Project status
-- Step 0 setup: done. Step 1 clean/dedupe/eligibility: done, approved 2026-10-14.
-- Step 2 classification: approved with changes (D26–D30); run done (1,452 labelled); blind hand
-  check 0/150 errors (CI 0–2.5%). Step 2 cost $2.37. D29 revised (dispatch → media_captions).
-  Workbook rebuilt and current. **Approved 2026-10-14.**
-  `gh` logged in as the owner's account (log out after step 8 push).
-- Step 3 scoring/routing: approved 2026-10-14 (D31–D36). Books 260×5 + Sam 225 (shortfall 35).
-- Step 4 web UI: approved 2026-10-14 (no GitHub Pages). Cost $2.12 (running total $10.32).
-- Step 5 README: approved 2026-10-14. Cost $0.97 (running total $11.29).
-- Step 6 CSV: done 2026-10-14 (`output/accounts_final.csv`, `output/reps_final.csv`); cost $1.45 (running
-  total $12.74). Push approved (D41); privacy scan clean (D42).
-- Step 8 GitHub: published 2026-10-14 as public repo `Account-Routing-Service` (branch `main`).
-  To publish changes: `python run.py` → `python pipeline/check_publish_safety.py` (0 findings)
-  → commit → `git push`. `gh auth logout` pending owner approval (D43).
+- Steps 0–8 done and approved; public repo `Account-Routing-Service` published 2026-10-14.
+- Final round (owner request): README split into shorter paragraphs + LOG link + cost summary +
+  final-check section; LOG.md rewritten short; `verify_rules.py` + `docs/final_check.md` added.
+  54 automated checks pass; privacy scan 0 findings. Waiting on owner: push approval for these
+  edits, final `/cost`, and when to run `gh auth logout` (D43).
+- To publish changes: `python run.py` → `python pipeline/check_publish_safety.py` (0 findings)
+  → commit → `git push`.
 
 ### Step 2 logic
 Precedence per company (notes of all merged records count): (1) a note naming a use case → that
